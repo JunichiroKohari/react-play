@@ -1,10 +1,12 @@
+import { memo } from 'react'
+
 const style = {
     width: '100%',
     height: '100%',
     backgroundColor: 'khaki'
 }
 
-export const ChildArea = (props) => {
+export const ChildArea = memo((props) => {
     const { open } = props
     console.log('rendring')
 
@@ -19,4 +21,4 @@ export const ChildArea = (props) => {
             ) : null}
         </>
     )
-}
+})
