@@ -28,3 +28,18 @@ code {
 .secondary {
     background: #11999e;
 }
+
+.input-text {
+    padding: 8px 16px;
+    border: solid #ddd 1px;
+    border-radius: 9999px;
+    outline: none;
+}
+
+.search-input-container {
+    display: flex;
+    align-items: center;
+}
+.search-input-btn-wrapper {
+    padding: 0 0 0 8px;
+}
