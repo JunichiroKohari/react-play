@@ -4,6 +4,7 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background: #e4f9f5;
 }
 
 code {
@@ -42,4 +43,36 @@ code {
 }
 .search-input-btn-wrapper {
     padding: 0 0 0 8px;
+}
+
+.card {
+    background: #fff;
+    box-shadow: #ddd 0px 0px 4px 2px;
+    border-radius: 8px;
+    padding: 16px;
+}
+.user-icon-with-name-container {
+    text-align: center;
+    .user-icon {
+        border-radius: 50%;
+    }
+    .user-name {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 0;
+        color: #40514e;
+    }
+}
+
+.profile-dl {
+    margin-bottom: 0;
+    text-align: left;
+    dt {
+        float: left;
+    }
+    dd {
+        padding-left: 32px;
+        padding-bottom: 8px;
+        overflow-wrap: break-word;
+    }
 }
