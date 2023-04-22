@@ -1,5 +1,10 @@
+import { useContext } from "react"
+import { UserContext } from "../../../providers/UserProvider"
+
 export const UserIconWithName = (props) => {
   const { image, name, isAdmin } = props
+  const context = useContext(UserContext)
+  console.log(context)
   return (
     <div className="user-icon-with-name-container">
       <img
