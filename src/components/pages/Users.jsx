@@ -1,5 +1,6 @@
 import { SearchInput } from '../molecules/SearchInput'
 import { UserCard } from '../organisms/user/UserCard'
+import { useLocation } from 'react-router-dom'
 
 const users = [...Array(10).keys()].map((val) => {
   return {
@@ -16,13 +17,15 @@ const users = [...Array(10).keys()].map((val) => {
 })
 
 export const Users = () => {
+  const { state } = useLocation()
+  const isAdmin = !!state?.isAdmin
   return (
     <div className="page-container">
       <h2>USERS PAGE</h2>
       <SearchInput />
       <div className="user-area">
         {users.map((user) => (
-          <UserCard key={user.id} user={user} />
+          <UserCard key={user.id} user={user} isAdmin={isAdmin} />
         ))}
       </div>
     </div>

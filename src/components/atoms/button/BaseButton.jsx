@@ -1,6 +1,6 @@
 export const BaseButton = (props) => {
-  const { children } = props
+  const { children, onClick } = props
   return (
-    <button className="btn">{children}</button>
+    <button onClick={onClick} className="btn">{children}</button>
   )
 }

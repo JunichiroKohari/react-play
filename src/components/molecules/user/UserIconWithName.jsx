@@ -1,5 +1,5 @@
 export const UserIconWithName = (props) => {
-  const { image, name } = props
+  const { image, name, isAdmin } = props
   return (
     <div className="user-icon-with-name-container">
       <img
@@ -10,6 +10,7 @@ export const UserIconWithName = (props) => {
         src={image}
       />
       <p className="user-name">{name}</p>
+      {isAdmin && <span className="edit-link">edit</span>}
     </div>
   )
 }

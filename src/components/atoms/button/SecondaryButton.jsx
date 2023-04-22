@@ -1,8 +1,8 @@
 import { BaseButton } from "./BaseButton"
 
 export const SecondaryButton = (props) => {
-  const { children } = props
+  const { children, onClick } = props
   return (
-    <BaseButton className="secondary">{children}</BaseButton>
+    <BaseButton onClick={onClick} className="secondary">{children}</BaseButton>
   )
 }
