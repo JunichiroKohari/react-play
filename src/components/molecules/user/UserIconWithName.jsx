@@ -1,7 +1,7 @@
-import { useContext } from "react"
+import { memo, useContext } from "react"
 import { UserContext } from "../../../providers/UserProvider"
 
-export const UserIconWithName = (props) => {
+export const UserIconWithName = memo((props) => {
   const { image, name } = props
   const { userInfo } = useContext(UserContext)
   const isAdmin = !!userInfo?.isAdmin
@@ -18,4 +18,4 @@ export const UserIconWithName = (props) => {
       {isAdmin && <span className="edit-link">edit</span>}
     </div>
   )
-}
+})
