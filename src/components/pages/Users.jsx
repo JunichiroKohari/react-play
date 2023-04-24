@@ -1,8 +1,10 @@
 import { UserContext } from '../../providers/UserProvider'
+import { userState } from '../../store/userState'
 import { SecondaryButton } from '../atoms/button/SecondaryButton'
 import { SearchInput } from '../molecules/SearchInput'
 import { UserCard } from '../organisms/user/UserCard'
 import { useContext } from 'react'
+import { useRecoilState } from 'recoil'
 
 const users = [...Array(10).keys()].map((val) => {
   return {
@@ -19,7 +21,8 @@ const users = [...Array(10).keys()].map((val) => {
 })
 
 export const Users = () => {
-  const { userInfo, setUserInfo } = useContext(UserContext)
+  // const { userInfo, setUserInfo } = useContext(UserContext)
+  const [userInfo, setUserInfo] = useRecoilState(userState)
   const onClickSwitch = () => setUserInfo({ isAdmin: !userInfo.isAdmin })
   return (
     <div className="page-container">
