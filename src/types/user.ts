@@ -1,4 +1,7 @@
-export type User = {
+export type UserProfile = {
+  id: number;
   name: string;
+  email: string;
+  address: string;
   hobbies?: Array<string>;
 }
