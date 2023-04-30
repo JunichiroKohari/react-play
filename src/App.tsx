@@ -1,6 +1,7 @@
 import { Router } from './router/Router';
 import { UserProfile } from './types/user';
 import './App.css';
+import { useAllUsers } from './hooks/useAllUsers';
 import { RecoilRoot } from 'recoil';
 import { Practice1 } from './practices/Practice1';
 import { Text } from './components/atoms/text/Text';
@@ -19,27 +20,8 @@ const user: UserProfile = {
 }
 
 function App() {
-  const [userProfiles, setUserProfiles] = useState<Array<UserProfile>>([])
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState(false)
-  const onClickFetchUsers = () => {
-    setLoading(true)
-    axios.get<Array<User>>('https://jsonplaceholder.typicode.com/users').then(res => {
-      const data = res.data.map((user) => {
-        return {
-          id: user.id,
-          name: `${user.name}（${user.username}）`,
-          email: user.email,
-          address: `${user.address.city}${user.address.suite}${user.address.street}`
-        }
-      })
-      setUserProfiles(data)
-    }).catch(() => {
-      setError(true)
-    }).finally(() => {
-      setLoading(false)
-    })
-  }
+  const { getUsers, userProfiles, loading, error } = useAllUsers()
+  const onClickFetchUsers = () => getUsers()
   return (
     <div className="App">
       <UserCard user={user} />
