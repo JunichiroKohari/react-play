@@ -1,30 +1,41 @@
-import { FC } from 'react'
-import { UserProfile } from '../../../types/user'
+import { FC, memo } from 'react'
+import {
+  Box,
+  Image,
+  Stack,
+  Text,
+} from '@chakra-ui/react'
 
 type Props = {
-  user: UserProfile
-}
+  userName: string;
+  fullName: string;
+  imageUrl: string;
+};
 
-export const UserCard:FC<Props> = (Props) => {
-  const { user } = Props
-
-  const style = {
-    border: "solid 1px #ccc",
-    borderRadius: "8px",
-    padding: "0 16px",
-    margin: "8px"
-  }
+export const UserCard:FC<Props> = memo((props) => {
+  const { userName, fullName, imageUrl } = props
 
   return (
-    <div style={style}>
-      <dl>
-        <dt>名前</dt>
-        <dd>{user.name}</dd>
-        <dt>メール</dt>
-        <dd>{user.email}</dd>
-        <dt>住所</dt>
-        <dd>{user.address}</dd>
-      </dl>
-    </div>
+    <Box
+      w="260px"
+      h="260px"
+      p={4}
+      bg="white"
+      borderRadius="10px"
+      shadow="md"
+      _hover={{ cursor: "pointer", opacity: 0.8 }}
+    >
+      <Stack textAlign="center">
+        <Image
+          borderRadius="full"
+          boxSize="160px"
+          m="auto"
+          src={imageUrl}
+          alt="profile image"
+        />
+        <Text fontSize="lg" fontWeight="bold">{userName}</Text>
+        <Text fontSize="sm" color="gray">{fullName}</Text>
+      </Stack>
+    </Box>
   )
-}
+})
