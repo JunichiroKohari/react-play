@@ -23,5 +23,5 @@ export const useAllUsers = () => {
     })
   }, [])
 
-  return { getUsers, users, loading, error }
+  return { getUsers, users, loading }
 }
