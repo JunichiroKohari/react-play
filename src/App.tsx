@@ -3,8 +3,8 @@ import { BrowserRouter } from 'react-router-dom';
 
 import theme from './theme/theme';
 import './App.css';
-import { Counter } from './components/atoms/Counter';
 import { Router } from './router/Router';
+import { Clock } from './components/atoms/Clock';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <BrowserRouter>
           <Router />
         </BrowserRouter>
-        <Counter initialValue={1} />
+        <Clock />
       </ChakraProvider>
     </div>
   );
