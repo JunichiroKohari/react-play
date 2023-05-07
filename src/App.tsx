@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import theme from './theme/theme';
 import './App.css';
 import { Router } from './router/Router';
-import { Clock } from './components/atoms/Clock';
+import { ImageUploader } from './components/FileUploader';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <BrowserRouter>
           <Router />
         </BrowserRouter>
-        <Clock />
+        <ImageUploader />
       </ChakraProvider>
     </div>
   );
