@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import theme from './theme/theme';
 import './App.css';
 import { Router } from './router/Router';
-import { Parent } from './components/ImperativeHandleText';
+import { Input } from './components/DebugValueText';
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <BrowserRouter>
           <Router />
         </BrowserRouter>
-        <Parent />
+        <Input />
       </ChakraProvider>
     </div>
   );
